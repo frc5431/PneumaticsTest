@@ -35,10 +35,14 @@ public class RobotContainer {
   }
 
   private void configureBindings() {
-    xbox.a().onTrue(runOnce(() -> dblSol1.set(Value.kForward)));
-    xbox.b().onTrue(runOnce(() -> dblSol1.set(Value.kReverse)));
-    xbox.x().onTrue(runOnce(() -> dblSol2.set(Value.kForward)));
-    xbox.y().onTrue(runOnce(() -> dblSol2.set(Value.kReverse)));
+    // xbox.a().onTrue(runOnce(() -> dblSol1.set(Value.kForward)));
+    xbox.a().onTrue(runOnce(() -> dblSol1.toggle()));
+    xbox.x().onTrue(runOnce(() -> dblSol2.toggle()));
+    xbox.leftBumper().onTrue(runOnce(() -> dblSol3.toggle()));
+    // xbox.x().onTrue(runOnce(() -> dblSol2.set(Value.kForward)));
+    // xbox.y().onTrue(runOnce(() -> dblSol2.set(Value.kReverse)));
+    // xbox.leftBumper().onTrue(runOnce(() -> dblSol3.set(Value.kForward)));
+    // xbox.rightBumper().onTrue(runOnce(() -> dblSol3.set(Value.kReverse)));
   }
 
   public Command getAutonomousCommand() {
